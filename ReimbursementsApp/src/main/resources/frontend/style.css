@@ -1,0 +1,12 @@
+.loginpass-container {    
+    background-color:rgb(31, 61, 90);
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-items:center;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;    
+  }

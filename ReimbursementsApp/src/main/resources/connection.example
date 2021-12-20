@@ -1,0 +1,5 @@
+# Our Connection object parameters including JDBC string and RDS database username/password
+# Rename this file to connection.properties and replace what is in the brackets (including brackets) with actual parameters
+jdbc_connection_url={example jdbc:postgresql://youramazonawsinstance/reimbursement}
+database_username={your db username}
+database_password={your password}
