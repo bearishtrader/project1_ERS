@@ -48,7 +48,7 @@ public class EmployeeExpenseReimbursementsSDF {
         Assertions.assertNotNull(reimbNewlyCreated);
     }
 
-    @Then("The description will match what was input")
+    /*@Then("The description will match what was input")
     public void the_description_will_match_what_was_input() {
         // Write code here that turns the phrase above into concrete actions
         Assertions.assertEquals("Super 8 Motel #1", reimbNewlyCreated.findElement(By.className("reimb-description")).getText());
@@ -68,5 +68,5 @@ public class EmployeeExpenseReimbursementsSDF {
     public void the_status_will_be_pending() {
         Assertions.assertEquals("Pending", reimbNewlyCreated.findElement(By.className("reimb-status")).getText());
     }
-
+*/
 }
