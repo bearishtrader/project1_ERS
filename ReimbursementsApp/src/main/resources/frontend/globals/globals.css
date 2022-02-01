@@ -53,10 +53,23 @@ body {
 .create-reimb-form{
     width: 100%;
     padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
 }
 
 .reimb-container {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
 }
 
 .reimb-item{
@@ -89,4 +102,8 @@ body {
 
 .reimb-delete-btns, .reimb-approve-btns, .reimb-deny-btns {
     text-shadow: 2px 2px 2px rgb(90, 90, 90);
+}
+
+input {
+    margin: 5px;
 }

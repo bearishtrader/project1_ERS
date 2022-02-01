@@ -1,5 +1,5 @@
 window.onload =async () => {
-    let response = await fetch("http://localhost:9000/api/check-session");
+    let response = await fetch(`${domain}/api/check-session`);
     let result = await response.json();
 
     if(result.successful){
@@ -14,7 +14,7 @@ async function login(e){
     let usernameInputElem = document.getElementById("username-input");
     let passwordInputElem = document.getElementById("password-input");    
 
-    let response = await fetch("http://localhost:9000/api/login",{
+    let response = await fetch(`${domain}/api/login`,{
         method: "POST",
         body: JSON.stringify({
             ersUsername: usernameInputElem.value,

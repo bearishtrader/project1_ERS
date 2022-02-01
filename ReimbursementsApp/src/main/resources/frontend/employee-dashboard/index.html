@@ -16,36 +16,28 @@
           <button class="btn btn-outline-danger btn-lg" onclick="logout()">Logout</button>
         </div>
     </nav>
-    <div class="container" style="width:100%;">
+    <div class="container">
         <span class="text">Create Expense Reimbursement Request</span>
-        <form class="create-reimb-form" onsubmit="createReimbursement(event)">
-            <!-- <table class="form-group column" style="margin: 2px;"> -->
-            <table style="margin: 2px;">
-                <tr>
-                    <td style="width: 33%;"><input type="text" class="form-control form-control-lg" id="reimb-description" placeholder="Description"></td>
-                    <td class="text"> $</td><td><input type="number" step="any" min="0.0" class="form-control-lg" id="reimb-amount" placeholder="Amount"></td>
-                    <td style="font-size: 16px; vertical-align: bottom;">
-                        <div class="input-group mb-3">
-                            <span class="input-group-prepend">
-                                <label class="input-group-text" style="font-size: 16px;" for="reimb-type-id">Type</label>
-                            </span>
-                            <select class="custom-select" id="reimb-type-id">
-                                <option selected>Choose One</option>
-                                <option value="1">LODGING</option>
-                                <option value="2">TRAVEL</option>
-                                <option value="3">FOOD</option>
-                                <option value="4">OTHER</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td><input type="file" class="form-control form-control-lg" id="reimb-receipt" placeholder="Upload Receipt" /></td>                
-                    <td><button type="submit" class="btn btn-primary btn-lg" id="reimb-submit">Submit</button></td>
-                </tr>                
-            </table>
-            <span class="text red" id="create-error-text"></span>
-        </form>
+        <form class="create-reimb-form" onsubmit="createReimbursement(event)">            	        
+		    <div class="input-group mb-3">
+                <input type="text" class="form-control-lg" style="flex-grow: 2;" id="reimb-description" placeholder="Description">                        
+			            <select class="custom-select" id="reimb-type-id">
+                            <option selected>Choose One Type</option>
+                            <option value="1">LODGING</option>
+                            <option value="2">TRAVEL</option>
+                            <option value="3">FOOD</option>
+                            <option value="4">OTHER</option>
+                        </select>
+                        <span>                            
+                            <input type="number" step="any" min="0.0" class="form-control-lg" id="reimb-amount" placeholder="$ Amount">
+                        </span>
+                        <button type="submit" class="btn btn-primary btn-lg" id="reimb-submit">Submit</button>
+                </div>                
+            <div class="text red" id="create-error-text"></div>
+        </form>   
         <table id="reimb-container"></table>
     </div>
+    
     <script src="./script.js"></script>
     <script src="../globals/globals.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
