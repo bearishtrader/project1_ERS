@@ -26,7 +26,7 @@ class ErsReimbursementServiceTest {
     }
 
     @Test
-    void getAllErsReimbursementsTest_FinManager() {
+    public void getAllErsReimbursementsTest_FinManager() {
         List<ErsUsers> ersUsersL = new ArrayList<>();
         ersUsersL.add(new ErsUsers(1, "jsmith", "1234", "John", "Smith", "jsmith@javadev.com", 1));
         ersUsersL.add(new ErsUsers(2, "jboss", "abc1234", "Jane", "Bosshart", "jboss@javadev.com", 2));
@@ -83,7 +83,7 @@ class ErsReimbursementServiceTest {
     }
 
     @Test
-    void getAllErsReimbursementsTest_Employee() {
+    public void getAllErsReimbursementsTest_Employee() {
         List<ErsUsers> ersUsersL = new ArrayList<>();
         ersUsersL.add(new ErsUsers(1, "jsmith", "1234", "John", "Smith", "jsmith@javadev.com", 1));
         ersUsersL.add(new ErsUsers(2, "jboss", "abc1234", "Jane", "Bosshart", "jboss@javadev.com", 2));
@@ -126,7 +126,7 @@ class ErsReimbursementServiceTest {
     }
 
     @Test
-    void createErsReimbursementTest_Employee() {
+    public void createErsReimbursementTest_Employee() {
         List<ErsUsers> ersUsersL = new ArrayList<>();
         ersUsersL.add(new ErsUsers(1, "jsmith", "1234", "John", "Smith", "jsmith@javadev.com", 1));
         JsonResponse jsonResponse = new JsonResponse();
@@ -141,7 +141,7 @@ class ErsReimbursementServiceTest {
     }
 
     @Test
-    void createErsReimbursementTest_FinManager() {  // Finance managers are not allowed to create expense reimbursements wrong role
+    public void createErsReimbursementTest_FinManager() {  // Finance managers are not allowed to create expense reimbursements wrong role
         JsonResponse jsonResponse = new JsonResponse();
         LookupTables.getLookupTablesMockito();
         ErsUsers ersUserFinManager = new ErsUsers(2, "jboss", "abc1234", "Jane", "Bosshart", "jboss@javadev.com", 2);
@@ -155,7 +155,7 @@ class ErsReimbursementServiceTest {
     }
 
     @Test
-    void deleteErsReimbursementTest() {
+    public void deleteErsReimbursementTest() {
         ErsUsers ersUserFromDao = new ErsUsers(1, "jsmith", "1234", "John", "Smith", "jsmith@javadev.com", 1);
         Integer reimbId = 1;
         LookupTables.getLookupTablesMockito();
@@ -166,7 +166,7 @@ class ErsReimbursementServiceTest {
     }
     // Unit test Map user's ersUsersId to the actual ErsUsers model to populate our ReimbursementsDTO with firstName, lastName, e-mail
     @Test
-    void getErsUsersMapFromReimbursementsTest() {
+    public void getErsUsersMapFromReimbursementsTest() {
         List<ErsUsers> ersUsers = new ArrayList<>();
         ersUsers.add(new ErsUsers(1, "jsmith", "1234", "John", "Smith", "jsmith@javadev.com", 1));
         ersUsers.add(new ErsUsers(2, "jboss", "abc1234", "Jane", "Bosshart", "jboss@javadev.com", 2));
@@ -200,7 +200,7 @@ class ErsReimbursementServiceTest {
     // The Map from previous test is used to lookup ErsUsers model info firstName, lastName, email to populate our ReimbursementsDTO which has this additional display
     // info added to the model used for the DAO, or ErsReimbursements
     @Test
-    void getReimbursementDTOListTest() {
+    public void getReimbursementDTOListTest() {
         List<ErsUsers> ersUsersL = new ArrayList<>();
         ersUsersL.add(new ErsUsers(1, "jsmith", "1234", "John", "Smith", "jsmith@javadev.com", 1));
         ersUsersL.add(new ErsUsers(2, "jboss", "abc1234", "Jane", "Bosshart", "jboss@javadev.com", 2));
@@ -249,7 +249,7 @@ class ErsReimbursementServiceTest {
     }
 
     @Test
-    void updateErsReimbursementTest() {
+    public void updateErsReimbursementTest() {
         ErsUsers ersUserFromDao = new ErsUsers(2, "jboss", "abc1234", "Jane", "Bosshart", "jboss@javadev.com", 2);
         Integer reimbId = 2;
         ReimbStatusDTO reimbStatusDTO = new ReimbStatusDTO(2, Timestamp.valueOf("2021-12-15 15:30:00"), 2/*jboss*/, 2/*Approved*/);
